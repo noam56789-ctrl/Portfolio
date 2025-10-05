@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>נועם אטיאס</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+      direction: rtl;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #0078d7;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #calendar-container {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #confirm-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>נועם אטיאס</h1>
+  </header>
+
+  <section id="about">
+    <h2>קצת עליי</h2>
+    <ul>
+      <li>שירתתי שירות משמעותי בבית הספר למקצועות המחשב הצה״לי - ביסמ״ח ובבית התוכנה הצה״לי - מצפ״ן </li>
+      <li>בעל 8 שנות ניסיון ביישום מערכות מידע - התמחות במערכת SAP</li>
+      <li>בעל תעודת מדריך כדורסל, יכול לאמן נערים עד גיל 16</li>
+      <li>סטודנט להנדסת תעשייה וניהול שנה ג׳</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>כישורים</h2>
+    <ul>
+      <li>HTML / CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>React</li>
+      <li>C#/C++</li>
+      <li>Assembly</li>
+      <li>SQL</li>
+      <li>ABAP (SAP CODING)</li>
+      <li>Jupyter Lab</li>
+      <li>ניתוח ותכנון מערכות מידע מתקדם</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>תאם פגישה</h2>
+    <button id="meeting-btn">תאם פגישה</button>
+
+    <div id="calendar-container">
+      <input type="date" id="meeting-date">
+      <button id="confirm-btn">אשר תאריך</button>
+    </div>
+  </section>
+
+  <script>
+    const meetingBtn = document.getElementById("meeting-btn");
+    const calendarContainer = document.getElementById("calendar-container");
+    const confirmBtn = document.getElementById("confirm-btn");
+    const meetingDate = document.getElementById("meeting-date");
+
+    // קובע שהתאריך ברירת מחדל יהיה היום
+    const today = new Date().toISOString().split('T')[0];
+    meetingDate.value = today;
+
+    // כשמשתמש לוחץ על "תאם פגישה"
+    meetingBtn.addEventListener("click", () => {
+      calendarContainer.style.display = "block"; // מציג את לוח השנה
+    });
+
+    // כשמשתמש לוחץ על "אשר תאריך"
+    confirmBtn.addEventListener("click", () => {
+      const date = meetingDate.value;
+      if (date) {
+        alert(`נקבעה פגישה לתאריך: ${date}`);
+        calendarContainer.style.display = "none"; // מסתיר שוב את הלוח
+      } else {
+        alert("אנא בחר תאריך לפני האישור.");
+      }
+    });
+  </script>
+</body>
+</html>
