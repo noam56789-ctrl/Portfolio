@@ -169,3 +169,67 @@ footer {
   transform: scale(1.05);
 }
 
+/* --- אזור זוגות ממליצים --- */
+.testimonials {
+  padding: 80px 10%;
+  background-color: #fff8f8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials h2 {
+  color: #d48b8b;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.testimonial {
+  font-style: italic;
+  font-size: 20px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0;
+  animation: fadeTestimonials 15s infinite;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d48b8b;
+}
+
+/* אנימציה עדינה שמציגה כל המלצה */
+@keyframes fadeTestimonials {
+  0%, 100% { opacity: 0; }
+  10%, 30% { opacity: 1; }
+  40%, 90% { opacity: 0; }
+}
+
+/* כל המלצה מוצגת בזמן אחר */
+.testimonial:nth-child(2) {
+  animation-delay: 5s;
+}
+.testimonial:nth-child(3) {
+  animation-delay: 10s;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  color: #d48b8b;
+  font-size: 40px;
+  transition: all 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #b96e6e;
+  transform: scale(1.2);
+}
